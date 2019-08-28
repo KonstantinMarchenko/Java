@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="Advertiser.model.Advertiser" alias="advertiser"/>
+        <typeAlias type="advertiser.model.Advertiser" alias="advertiser"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">

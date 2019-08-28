@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="Advertiser.AdvertiserMapper" >
-	<resultMap id="advertiserResult" type="advertiser">
-		<id property="id" column="id" />
-		<result property="name" column="name"/>
-		<result property="contactname" column="contactname"/>
-		<result property="creditlimit" column="creditlimit"/>
-	</resultMap>
-	
-	<select id="selectAdvertiser" resultType="advertiser" parameterType="int" resultMap="advertiserResult">
-	    SELECT id, name, contactname, creditlimit from advertiser WHERE id = #{id}
-	</select>
-	
-	<select id="selectAdvertisers" resultType="advertiser" resultMap="advertiserResult">
-	    SELECT id, name, contactname, creditlimit from advertiser
-	</select>
-	
-	<insert id="insertAdvertiser" parameterType="advertiser"  keyProperty="id" useGeneratedKeys="true">
-		INSERT into advertiser(name, contactname, creditlimit) VALUES(#{name}, #{contactname}, #{creditlimit}) 		    
-	</insert>
-	
-	<update id="updateAdvertiser" parameterType="advertiser">
-		UPDATE advertiser SET name=#{name}, contactname =#{contactname}, creditlimit =#{creditlimit} WHERE id =#{id}  	    
-	</update>
-	
-	<delete id="deleteAdvertiser" parameterType="int">
-		DELETE FROM advertiser WHERE id =#{id}  	    
-	</delete>
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="advertiser.AdvertiserMapper">
+    <resultMap id="advertiserResult" type="advertiser">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="contactName" column="contactName"/>
+        <result property="creditLimit" column="creditLimit"/>
+    </resultMap>
+
+    <select id="selectAdvertiser" resultType="advertiser" parameterType="int" resultMap="advertiserResult">
+        SELECT id, name, contactName, creditLimit from advertiser WHERE id = #{id}
+    </select>
+
+    <select id="selectAdvertisers" resultType="advertiser" resultMap="advertiserResult">
+        SELECT id, name, contactName, creditLimit from advertiser
+    </select>
+
+    <insert id="insertAdvertiser" parameterType="advertiser" keyProperty="id" useGeneratedKeys="true">
+        INSERT into advertiser(name, contactName, creditLimit) VALUES(#{name}, #{contactName}, #{creditLimit})
+    </insert>
+
+    <update id="updateAdvertiser" parameterType="advertiser">
+        UPDATE advertiser SET name=#{name}, contactName =#{contactName}, creditLimit =#{creditLimit} WHERE id =#{id}
+    </update>
+
+    <delete id="deleteAdvertiser" parameterType="int">
+        DELETE FROM advertiser WHERE id =#{id}
+    </delete>
 </mapper>
