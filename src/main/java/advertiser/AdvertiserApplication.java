@@ -1,4 +1,4 @@
-package Advertiser;
+package advertiser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,22 +13,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class Advertiserapplication extends SpringBootServletInitializer{
-	
-	@Bean 
-		ServletWebServerFactory servletWebServerFactory(){
-		return new TomcatServletWebServerFactory();
-	}
-	
-	public static void main(String[] args) {
-        SpringApplication.run(Advertiserapplication.class, args);
-    }	
-    
+public class AdvertiserApplication extends SpringBootServletInitializer {
+
+    @Bean
+    ServletWebServerFactory servletWebServerFactory() {
+        return new TomcatServletWebServerFactory();
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(AdvertiserApplication.class, args);
+    }
+
     @Bean
     public Docket productApi() {
-       return new Docket(DocumentationType.SWAGGER_2)
-    		   .select()   		   
-    		   .apis(RequestHandlerSelectors.basePackage("Advertiser"))          
-    		   .build();
-    }   
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("Advertiser"))
+                .build();
+    }
 }
